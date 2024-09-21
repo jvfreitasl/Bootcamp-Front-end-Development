@@ -1,16 +1,17 @@
 import "./App.css";
-import Saudacao from "./components/Saudacao/Saudacao";
 import Mensagem from "./components/Mensagem/Mensagem";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Olá</h1>
-      <Saudacao nome="João" sobrenome="Victor" />
-      <Saudacao />
-      <Mensagem>Tenha um ótimo dia.</Mensagem>
-      <Mensagem cor="red">E uma ótima semana.</Mensagem>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <Mensagem cor="red">Tenha uma ótima semana.</Mensagem>
+      </div>
+      <Footer />
+    </>
   );
 }
 

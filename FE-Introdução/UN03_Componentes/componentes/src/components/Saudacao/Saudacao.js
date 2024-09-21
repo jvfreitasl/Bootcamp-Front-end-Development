@@ -1,4 +1,6 @@
-function Saudacao({ nome = 'usuário', sobrenome }) { // usuário será meu nome default
+import "./Saudacao.css";
+function Saudacao({ nome = "usuário", sobrenome }) {
+  // usuário será meu nome default
   //props é a função de criar parâmentros para minha tag
 
   // const nome = props.nome;
