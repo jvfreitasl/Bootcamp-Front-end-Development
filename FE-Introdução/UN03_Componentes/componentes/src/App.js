@@ -4,14 +4,25 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Filmes from "./components/Filmes/Filmes";
 import Form from "./components/Form/Form";
-import Button from "./components/Button/Button"
+import Button from "./components/Button/Button";
+import { useState } from "react";
 
 function App() {
-  function handleClick() {
-    alert("Olá");
+  // let count = 0;
+  const [count, setCount] = useState(0);
+
+  // function handleClick() {
+  //   alert("Olá");
+  // }
+  // function handleClickButton1() {
+  //   alert("Clicou no botão 1");
+  // }
+
+  function adiciona() {
+    setCount(count + 1);
   }
-  function handleClickButton1(){
-    alert("Clicou no botão 1")
+  function remove() {
+    setCount(count - 1);
   }
 
   return (
@@ -26,19 +37,24 @@ function App() {
         </section>
         <section>
           <h2>Eventos</h2>
-          <button onClick={handleClick}>Clique!</button>
+          {/* <button onClick={handleClick}>Clique!</button> */}
           {/*Ao clicar o evento irá exibir.*/}
           {/* <button onMouseEnter={handleClick}>Clique!</button> - Ao entrar em contato o alerta é exibido */}
-          <button
+          {/* <button
             onClick={function thisClick() {
               alert("Olá João");
             }}
           >
             Clique!
-          </button>
-
-          <Button text='Botao1' onClick={handleClickButton1}></Button>
-          <Button text='BotaoTeste' onClick={'Testei'}></Button>
+          </button> */}
+          {/* <Button text="Botao1" onClick={handleClickButton1}></Button>
+          <Button text="BotaoTeste" onClick={"Testei"}></Button> */}
+        </section>
+        <section>
+          <h3>Contador:</h3>
+          <Button text="adiciona" onClick={adiciona} />
+          <Button text="remove" onClick={remove} />
+          <h4>{count}</h4>
         </section>
       </div>
       <Footer />
