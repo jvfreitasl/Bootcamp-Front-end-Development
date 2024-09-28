@@ -1,35 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filme from "../Filme/Filme.js";
 import "./Filmes.css";
 import FormInput from "../FormInput/FormInput.js";
 import Button from "../Button/Button.js";
 const Filmes = () => {
-  const [filmes, setFilmes] = useState([
-    {
-      nome: "HellBoy",
-      poster:
-        "https://www.claquete.com.br/fotos/filmes/poster/15442_grande.jpg",
-      anoLancamento: "2010",
-    },
-    {
-      nome: "Interestelar",
-      poster:
-        "https://uauposters.com.br/media/catalog/product/4/1/411320150509-uau-posters-filmes-interestelar-interestellar.jpg",
-      anoLancamento: "2014",
-    },
-    {
-      nome: "Titanic",
-      poster:
-        "https://uauposters.com.br/media/catalog/product/cache/1/thumbnail/800x930/9df78eab33525d08d6e5fb8d27136e95/1/9/198920140605-198920140605-uau-posters-filmes-titanic--titanic-2.jpg",
-      anoLancamento: "2005",
-    },
-    {
-      nome: "Meu Malvado Favorito",
-      poster:
-        "https://br.web.img3.acsta.net/r_1280_720/medias/nmedia/18/87/89/83/20028679.jpg",
-      anoLancamento: "2020",
-    },
-  ]);
+  const [filmes, setFilmes] = useState([]);
+
+  //useEffect controla o ciclo de vida da aplicação, primeiro parâmetro é uma função no qual deseja que ele execute. (fará isso após a construção do componente)
+  //O segundo parâmentro é para caso haja alguma mudança na aplicação, é uma variável de estado, seja qual for a mudança, ele irá chamar novamente a função.
+  useEffect(() => {
+    getMovies();
+  }, []);
 
   const [filmesForm, setFilmesForm] = useState({
     nome: "",
@@ -38,20 +19,31 @@ const Filmes = () => {
   });
 
   const handleClick = () => {
-    setFilmes([...filmes, filmesForm])
+    setFilmes([...filmes, filmesForm]);
     setFilmesForm({
       nome: "",
       poster: "",
       anoLancamento: "",
-    })
+    });
   };
 
   const handleFiledsChange = (event) => {
     setFilmesForm({
       ...filmesForm,
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event.target.value,
+    });
     console.log(filmesForm);
+  };
+
+  const getMovies = () => {
+    //GET - Buscar as informações dos filmes
+    // response - a resposta do servidor (confirmação que houve uma comunicação)
+    // data - são os dados que recebemos, que estão contidos no response
+    fetch("http://localhost:3005/movies")
+      .then((response) => response.json())
+      .then((data) => {
+        setFilmes(data);
+      });
   };
 
   return (
