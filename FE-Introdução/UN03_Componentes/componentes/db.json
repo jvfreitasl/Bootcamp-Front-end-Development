@@ -1,28 +1,52 @@
 {
   "movies": [
     {
-      "id": 0,
+      "id": "0",
       "nome": "HellBoy",
       "poster": "https://www.claquete.com.br/fotos/filmes/poster/15442_grande.jpg",
       "anoLancamento": "2010"
     },
     {
-      "id": 1,
+      "id": "1",
       "nome": "Interestelar",
       "poster": "https://uauposters.com.br/media/catalog/product/4/1/411320150509-uau-posters-filmes-interestelar-interestellar.jpg",
       "anoLancamento": "2014"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Titanic",
       "poster": "https://uauposters.com.br/media/catalog/product/cache/1/thumbnail/800x930/9df78eab33525d08d6e5fb8d27136e95/1/9/198920140605-198920140605-uau-posters-filmes-titanic--titanic-2.jpg",
       "anoLancamento": "2005"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Meu Malvado Favorito",
       "poster": "https://br.web.img3.acsta.net/r_1280_720/medias/nmedia/18/87/89/83/20028679.jpg",
       "anoLancamento": "2020"
+    },
+    {
+      "id": "964a",
+      "nome": "Homem Aranha",
+      "poster": "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/217242163/poster-homem-aranha-atraves-do-aranhaverso-b-f528852f.jpg",
+      "anoLancamento": "2023"
+    },
+    {
+      "id": "2399",
+      "nome": "Batman",
+      "poster": "https://a-static.mlcdn.com.br/450x450/poster-cartaz-batman-o-cavaleiro-das-trevas-g-pop-arte-poster/poparteskins2/15938524829/bd26aa0882238169c6a20a9acaf134fb.jpeg",
+      "anoLancamento": "2013"
+    },
+    {
+      "id": "dcff",
+      "nome": "Hulk",
+      "poster": "https://img.elo7.com.br/product/zoom/2677157/big-poster-filme-hulk-2003-lo01-tam-90x60-cm-poster.jpg",
+      "anoLancamento": "2003"
+    },
+    {
+      "id": "8c84",
+      "nome": "Coringa",
+      "poster": "https://http2.mlstatic.com/D_NQ_NP_971083-MLU73068731679_112023-O.webp",
+      "anoLancamento": "2022"
     }
   ]
 }

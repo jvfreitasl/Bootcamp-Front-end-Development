@@ -18,8 +18,20 @@ const Filmes = () => {
     anoLancamento: "",
   });
 
-  const handleClick = () => {
-    setFilmes([...filmes, filmesForm]);
+  const handleClick = async () => {
+    const response = await fetch("http://localhost:3005/movies", {
+      method: "POST",
+      header: new Headers({
+        "Content-type": "application/json",
+      }),
+      body: JSON.stringify(filmesForm),
+    });
+
+    const data = await response.json();
+    alert(`Filme ${data.nome} Cadastrado com sucesso!`);
+
+    getMovies();
+
     setFilmesForm({
       nome: "",
       poster: "",
@@ -35,15 +47,13 @@ const Filmes = () => {
     console.log(filmesForm);
   };
 
-  const getMovies = () => {
+  const getMovies = async () => {
     //GET - Buscar as informações dos filmes
     // response - a resposta do servidor (confirmação que houve uma comunicação)
     // data - são os dados que recebemos, que estão contidos no response
-    fetch("http://localhost:3005/movies")
-      .then((response) => response.json())
-      .then((data) => {
-        setFilmes(data);
-      });
+    const response = await fetch("http://localhost:3005/movies");
+    const data = await response.json();
+    setFilmes(data);
   };
 
   return (
@@ -59,7 +69,7 @@ const Filmes = () => {
           onChange={(event) => handleFiledsChange(event)}
         />
         <FormInput
-          inputName="Poster"
+          inputName="Poster(URL) "
           id="poster"
           name="poster"
           type="text"
